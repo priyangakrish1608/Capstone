@@ -1,0 +1,24 @@
+#someDiv {
+    line-height: 1.5em;
+    height: 3em;       /* height is 2x line-height, so two lines will display */
+    overflow: hidden;  /* prevents extra lines from being visible */
+}
+
+.innerNav { 
+    height : 50px ; 
+    background : #009ea5 ;
+ } 
+ .innerNav ul li {
+    List-style : none ; 
+    float: left;
+    padding: 10px;
+    margin: 0px 20px;
+}
+.innerNav ul li a{ 
+    text-decoration : none ; 
+    text-align : center ;
+    color : #f5f5f5 ; 
+}
+.innerNav ul li a>i { 
+    margin-right : 10px ;
+ } 

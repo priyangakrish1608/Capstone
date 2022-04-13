@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Order/Delivery</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https:stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="icon" href="./assets/title_logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/navbar.css" />
+    <style>
+      body {
+        background-image: url("assets/background.jpeg");
+        background-size: auto;
+      }
+      .refund {
+        color: red;
+      }
+      .head {
+        text-align: center;
+        color: crimson;
+      }
+      .newDiv {
+        height: 150px;
+        border: 1px solid grey;
+        margin: 20px 400px; /* auto */
+        padding: 25px;
+        background-color: white;
+      }
+      img {
+        height: 100px;
+      }
+      #top {
+        box-shadow: -5px -5px #666666;
+        border-radius: 10px;
+        text-align: left;
+        display: flex;
+      }
+      #top_right {
+        float: right;
+      }
+      .fontSize {
+        font-size: small !important;
+      }
+      #center {
+        box-shadow: -5px -5px #666666;
+        border-radius: 10px;
+        text-align: left;
+        display: flex;
+      }
+      #center_right {
+        float: right;
+      }
+      #bottom {
+        box-shadow: -5px -5px #666666;
+        border-radius: 10px;
+        text-align: left;
+        display: flex;
+      }
+      #bottom_right {
+        float: right;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container sticky-top">
+      <div class="d-flex">
+        <div class="w-25 bg-light">
+          <h1>Elite-<span>Company</span></h1>
+        </div>
+
+        <nav
+          class="navbar sticky-top navbar-expand-lg navbar-light bg-light w-100"
+        >
+          <div class="container-fluid">
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <div class="d-flex">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a
+                      class="nav-link active"
+                      aria-current="page"
+                      href="./new_Home.html"
+                      >Home</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="#">Blogs</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">About-us</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Deal</a>
+                  </li>
+                </ul>
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 me-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="#"
+                      >Call-us: +91 78932611915</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="./orderanddeliveryitems.html"
+                      >Order Details</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="./login.html">Login</a>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <form class="d-flex">
+                  <div class="search">
+                    <input type="text" />
+                    <a href="#" class="text-center"
+                      ><i class="fa fa-search"></i>Search</a
+                    >
+                    <a href="#" class="text-center"
+                      >Catergory<i class="fa fa-angle-down"></i
+                    ></a>
+                    <a href="#" class="text-center"
+                      >Cart<i class="fa fa-shopping-cart"></i
+                    ></a>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <h1 class="head">Orders and Delivery Details</h1>
+
+    <div class="newDiv" id="top">
+      <img src="assets/Chudi.jpeg" />
+      <p id="top_right" class="ms-5 fontSize">
+        <b>Product:</b> Silk Chudithar<br /><b>Price:</b> Rs.1,500<br /><b
+          >Color:</b
+        >
+        Orange Top,Pink Bottom<br /><b>Delivery Tracking:</b> Your Product will
+        be delivered on April 14,2022<br /><b>Ordered Date:</b> April 04,2022
+      </p>
+
+      <br />
+    </div>
+    <div class="newDiv" id="center">
+      <img src="./assets/shirt.jpeg" />
+      <p id="center_right" class="ms-5 fontSize">
+        <b>Product:</b> Shirt<br /><b>Price:</b> Rs.1,000<br /><b>Color:</b>
+        Pink<br /><b>Delivery Tracking:</b> Your Product was delivered on March
+        29,2022<br /><b>Ordered Date:</b> March 21,2022
+      </p>
+      <br />
+    </div>
+    <div class="newDiv" id="bottom">
+      <img src="./assets/watch.jpeg" />
+      <p id="bottom_right" class="ms-5 fontSize">
+        <b>Product:</b> Smart Watch<br /><b>Price:</b> Rs.10,000<br /><b
+          >Color:</b
+        >
+        Black<br /><b>Delivery Tracking:</b>
+        <i class="refund">Amount Refunded</i><br /><b>Ordered Date:</b>
+        <i class="refund">Order Cancelled</i>
+      </p>
+      <br />
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+      integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
