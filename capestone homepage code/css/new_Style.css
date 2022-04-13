@@ -1,6 +1,7 @@
 #someDiv {
     line-height: 1.5em;
     height: 3em;       /* height is 2x line-height, so two lines will display */
+    overflow: hidden;  /* prevents extra lines from being visible */
 }
 
 .innerNav { 
@@ -21,3 +22,6 @@
 .innerNav ul li a>i { 
     margin-right : 10px ;
  } 
+ .rowH {
+     height: 365px;
+ }
