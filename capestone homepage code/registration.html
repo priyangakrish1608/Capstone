@@ -189,7 +189,11 @@
       nametext.innerHTML = "";
       emailText.innerHTML = "";
       passwordText.innerHTML = "";
-        window.location.href = "./login.html";
+      document.getElementById("toastMessage").classList.add("show");
+          setTimeout(() => {
+            document.getElementById("toastMessage").classList.remove("show");
+            window.location.href = "./login.html";
+          }, 2000);
     }
   }
       
