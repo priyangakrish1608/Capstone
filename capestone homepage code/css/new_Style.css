@@ -4,6 +4,10 @@
     overflow: hidden;  /* prevents extra lines from being visible */
 }
 
+.my-container{
+    width: 99%;
+}
+
 .innerNav { 
     height : 50px ; 
     background : #009ea5 ;
