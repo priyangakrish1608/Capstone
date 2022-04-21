@@ -16,10 +16,6 @@
     <link rel="icon" href="./assets/title_logo.png" type="image/x-icon" />
     <link rel="stylesheet" href="./css/navbar.css" />
     <style>
-      body {
-        background-image: url("assets/background.jpeg");
-      }
-
       .refund {
         color: red;
       }
@@ -30,60 +26,14 @@
         background-color: white;
       }
 
-      .topclass {
-        height: 150px;
-        border: 1px solid grey;
-        margin: 20px 300px;
-        padding: 25px;
-        background-color: white;
-      }
-
-      img {
-        height: 100px;
-      }
-
-      #top {
-        box-shadow: -5px -5px #666666;
-        border-radius: 10px;
-        text-align: left;
-      }
-
-      #top_right {
-        float: right;
-      }
-
-      #top2 {
-        box-shadow: -5px -5px #666666;
-        border-radius: 10px;
-        text-align: left;
-      }
-
-      #top2_right {
-        float: right;
-      }
-
-      #center {
-        box-shadow: -5px -5px #666666;
-        border-radius: 10px;
-        text-align: left;
-      }
       .fontSize {
         font-size: small !important;
       }
-      #center_right {
-        float: right;
-      }
-
-      #bottom {
-        box-shadow: -5px -5px #666666;
-        border-radius: 10px;
-        text-align: left;
-      }
-
-      #bottom_right {
-        margin-right: 124px;
-        float: right;
-      }
+      
+   img {
+       height: 75px;
+   }
+      
     </style>
   </head>
   <body>
@@ -169,55 +119,66 @@
         </nav>
       </div>
     </div>
-    <h1 class="headClass">Orders and Delivery</h1>
-
-    <div id="top" class="topclass fontSize">
-      <img src="assets/Chudi.jpeg" />
-      <a href="chudi_delivery.html">View Details</a>
-      <p id="top_right">
-        <b>Product:</b> Silk Chudithar<br /><b>Price:</b> Rs.1,500<br /><b
-          >Color:</b
-        >
-        Orange Top,Pink Bottom<br /><b>Quantity:</b> 2<br /><b>Status:</b> Your
-        Product will be delivered on April 14,2022<br /><b>Ordered Date:</b>
-        April 04,2022
-      </p>
-      <br /><br />
-    </div>
-
-    <div id="top2" class="topclass fontSize">
-      <img src="assets/speaker.jpg" />
-      <a href="speaker_delivery.html">View Details</a>
-      <p id="top2_right">
-        <b>Product:</b> Speaker<br /><b>Price:</b> Rs.9450<br /><b>Color:</b>
-        Black<br /><b>Quantity:</b> 1<br /><b>Status:</b> Your Product was
-        delivered on March 25,2022<br /><b>Ordered Date:</b> March 23,2022
-      </p>
-      <br /><br />
-    </div>
-
-    <div id="center" class="topclass fontSize">
-      <img src="assets/shirt.jpeg" />
-      <a href="shirt_delivery.html">View Details</a>
-      <p id="center_right">
-        <b>Product:</b> Shirt<br /><b>Price:</b> Rs.1,000<br /><b>Color:</b>
-        Pink<br /><b>Quantity:</b> 1<br /><b>Status:</b> Your Product was
-        delivered on March 29,2022<br /><b>Ordered Date:</b> March 21,2022
-      </p>
-      <br /><br />
-    </div>
-
-    <div id="bottom" class="topclass fontSize">
-      <img src="assets/watch.jpeg" />
-      <a href="watch_delivery.html">View Details</a>
-      <p id="bottom_right">
-        <b>Product:</b> Watch<br /><b>Price:</b> Rs.2,500<br /><b>Color:</b>
-        Black<br /><b>Quantity:</b> 1<br /><b>Status:</b>
-        <i class="refund">Amount Refunded</i><br /><b>Ordered Date:</b>
-        <i class="refund">Order Cancelled</i>
-      </p>
-      <br /><br />
-    </div>
+    <h1 class="headClass">Orders and Delivery Details</h1>
+    <div class="table-responsive">
+    <table class="table table-bordered bg-light text-center">
+       <thead class="bg-success text-white">
+          <tr>
+            <th>S.No</th>
+            <th>Product_Image</th>
+            <th>Product_Name</th>
+            <th>Price (In Rs)</th>
+            <th>Quantity</th>
+            <th>Ordered_Date</th>
+            <th>Status</th>
+            <th>Delivery_Address</th>
+          </tr>
+       </thead>
+       <tbody>
+          <tr class="text-success">
+             <td>1</td>
+             <td><img src="./assets/chudi.jpeg"></td>
+             <td>Silk Chudithar</td>
+             <td>1,000</td>
+             <td>2</td>
+             <td>April 21,2022</td>
+             <td class="text-primary">Pending</td>
+             <td>X Area,Y City</td>
+          </tr>
+          <tr class="text-success">
+             <td>2</td>
+             <td><img src="./assets/shirt.jpeg"></td>
+             <td>Shirt</td>
+             <td>1,550</td>
+             <td>2</td>
+             <td>March 24,2022</td>
+             <td>Delivered on March 29,2022</td>
+             <td>X Area,Y City</td>
+          </tr>
+          <tr class="text-success">
+             <td>3</td>
+            <td><img src="./assets/speaker.jpg"></td>
+             <td>Speaker</td>
+             <td>9,400</td>
+             <td>1</td>
+             <td>March 15,2022</td>
+             <td>Delivered on March 23,2022</td>
+             <td>X Area,Y City</td>
+          </tr>
+          <tr class="text-success">
+             <td>4</td>
+             <td><img src="./assets/watch.jpeg"></td>
+             <td>Watch</td>
+             <td>2,050</td>
+             <td>1</td>
+             <td class="text-danger">Order Cancelled & Amount Refunded</td>
+             <td class="text-danger">-----</td>
+             <td>X Area,Y City</td>
+          </tr>
+       </tbody>
+    </table>
+</div>
+    
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
