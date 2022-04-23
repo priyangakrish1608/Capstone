@@ -8,91 +8,86 @@
     <link rel="stylesheet" href="./css/registration_Style.css" />
     <link rel="icon" href="./assets/title_logo.png" type="image/x-icon" />
     <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-    crossorigin="anonymous"
-  />
-
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
   </head>
   <body>
     <div class="container" id="container">
       <div class="form-container sign-up-container">
         <form action="#" id="loginFormId" name="signUpForm">
           <h1>Sign Up</h1>
-          
+
           <div class="d-flex flex-row align-items-center mb-4">
             <div class="form-outline flex-fill mb-0">
               <div class="form-floating">
-                  <input type="text" name="name" placeholder="Name" />
-                  <div id="name" style="color: red;"></div>
+                <input type="text" name="name" placeholder="Name" />
+                <div id="name" style="color: red"></div>
               </div>
             </div>
           </div>
           <div class="d-flex flex-row align-items-center mb-4">
             <div class="form-outline flex-fill mb-0">
               <div class="form-floating">
-                  <input type="email" name="email" placeholder="Email" />
-                  <div id="emailID" style="color: red;"></div>
-                 
+                <input type="email" name="email" placeholder="Email" />
+                <div id="emailID" style="color: red"></div>
               </div>
             </div>
           </div>
           <div class="d-flex flex-row align-items-center mb-4">
             <div class="form-outline flex-fill mb-0">
               <div class="form-floating">
-                  <input type="password" name="password" placeholder="Password" />
-                  <div id="password" style="color: red;"></div>
-                
+                <input type="password" name="password" placeholder="Password" />
+                <div id="password" style="color: red"></div>
               </div>
             </div>
           </div>
-          <div
-          class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-          <button onclick="validateLoginForm()">Sign Up</button>
+          <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+            <button onclick="validateLoginForm()">Sign Up</button>
           </div>
-          <div
-          class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-            <a
-               href="./login.html"
-               style="text-decoration: none">Go to login page</a>
+          <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+            <a href="./login.html" style="text-decoration: none"
+              >Go to login page</a
+            >
           </div>
         </form>
       </div>
       <div class="overlay-container">
         <div class="overlay">
           <div class="overlay-panel overlay-left">
-            <h1>Welcome To Flip Kart!</h1>
+            <h1>WELCOME TO ELITE!</h1>
             <p>Best Of Exclusive Brands</p>
             <button class="press" id="SignIn">Sign Up</button>
           </div>
           <div class="overlay-panel overlay-right">
-            <h1>Welcome To Flip Kart!</h1>
-            <p>Exciting Offer Everday!</p>
+            <h1>WELCOME TO ELITE!</h1>
+            <p>Make way for your Passion</p>
             <button class="press" id="SignUp">Sign Up</button>
           </div>
         </div>
       </div>
     </div>
     <div
-        class="toast align-items-center text-white bg-primary border-0 me-3 mb-4 ms-auto"
-        role="alert"
-        style="
-          position: absolute;
-          bottom: 0;
-          right: 0;
-          z-index: 9999;
-          float: 'right';
-        "
-        id="toastMessage"
-        aria-live="assertive"
-        aria-atomic="true"
-      >
-        <div class="d-flex">
-          <div class="toast-body">signUp Successfully</div>
-        </div>
+      class="toast align-items-center text-white bg-primary border-0 me-3 mb-4 ms-auto"
+      role="alert"
+      style="
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: 9999;
+        float: 'right';
+      "
+      id="toastMessage"
+      aria-live="assertive"
+      aria-atomic="true"
+    >
+      <div class="d-flex">
+        <div class="toast-body">signUp Successfully</div>
       </div>
-      <script
+    </div>
+    <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
@@ -101,98 +96,130 @@
       const SignUpButton = document.getElementById("SignUp");
       const SignInButton = document.getElementById("SignIn");
       const container = document.getElementById("container");
-      
+
       SignUpButton.addEventListener("click", () => {
         container.classList.add("right-panel-active");
       });
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-      
-   </script>
+      src =
+        "https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js";
+    </script>
     <script src="jquery-3.6.0.min.js"></script>
     <script>
-   function validateLoginForm() {
-    let ourForm = document.getElementById("loginFormId");
-    function handleForm(event) {
-      event.preventDefault();
-    }
-    ourForm.addEventListener("submit", handleForm);
-    let emailForm = document.forms["signUpForm"]["email"].value;
-    let emailText = document.getElementById("emailID");
-    let passwordForm = document.forms["signUpForm"]["password"].value;
-    let passwordText = document.getElementById("password");
-    let nameForm =  document.forms["signUpForm"]["name"].value;
-    let nametext = document.getElementById("name");
-    if (emailForm == "" && passwordForm == "" && nameForm == "") {
-      emailText.innerHTML = "Email is required";
-      passwordText.innerHTML = "Password is required";
-      nametext.innerHTML = "Name is required";
-      return false;
-    } else if (emailForm == "") {
-      emailText.innerHTML = "Email is required";
-      nametext.innerHTML = "";
-      passwordText.innerHTML = "";
-      return false;
-    } 
-    else if (nameForm == "") {
-      nametext.innerHTML = "Name is required";
-      emailText.innerHTML = "";
-      passwordText.innerHTML = "";
-      if (
-        !String(emailForm)
-          .toLowerCase()
-          .match(
-            /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-          )
-      ) {
-        emailText.innerHTML = "Email is invalid";
-        return;
-      } else {
-        document
-          .getElementById("emailAddess")
-          .classList.remove("is-invalid");
-        emailText.innerHTML = "";
+      function validateLoginForm() {
+        let ourForm = document.getElementById("loginFormId");
+        function handleForm(event) {
+          event.preventDefault();
+        }
+        ourForm.addEventListener("submit", handleForm);
+        let emailForm = document.forms["signUpForm"]["email"].value;
+        let emailText = document.getElementById("emailID");
+        let passwordForm = document.forms["signUpForm"]["password"].value;
+        let passwordText = document.getElementById("password");
+        let nameForm = document.forms["signUpForm"]["name"].value;
+        let nametext = document.getElementById("name");
+        if (emailForm == "" && passwordForm == "" && nameForm == "") {
+          emailText.innerHTML = "Email is required";
+          passwordText.innerHTML = "Password is required";
+          nametext.innerHTML = "Name is required";
+          return false;
+        } else if (emailForm == "") {
+          emailText.innerHTML = "Email is required";
+          nametext.innerHTML = "";
+          passwordText.innerHTML = "";
+          return false;
+        } else if (nameForm == "") {
+          nametext.innerHTML = "Name is required";
+          emailText.innerHTML = "";
+          passwordText.innerHTML = "";
+          if (
+            !String(emailForm)
+              .toLowerCase()
+              .match(
+                /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+              )
+          ) {
+            emailText.innerHTML = "Email is invalid";
+            return;
+          } else {
+            document
+              .getElementById("emailAddess")
+              .classList.remove("is-invalid");
+            emailText.innerHTML = "";
+          }
+          return false;
+        } else if (passwordForm == "") {
+          passwordText.innerHTML = "Password is required";
+          emailText.innerHTML = "";
+          nametext.innerHTML = "";
+          if (
+            !String(emailForm)
+              .toLowerCase()
+              .match(
+                /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+              )
+          ) {
+            emailText.innerHTML = "Email is invalid";
+            return;
+          } else {
+            document
+              .getElementById("emailAddess")
+              .classList.remove("is-invalid");
+            emailText.innerHTML = "";
+          }
+          return false;
+        } else {
+          if (
+            !String(emailForm)
+              .toLowerCase()
+              .match(
+                /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+              )
+          ) {
+            emailText.innerHTML = "Email is invalid";
+            nametext.innerHTML = "";
+            passwordText.innerHTML = "";
+            return;
+          }
+          nametext.innerHTML = "";
+          emailText.innerHTML = "";
+          passwordText.innerHTML = "";
+          userAction();
+        }
       }
-      return false;
-    } else if (passwordForm == "") {
-      passwordText.innerHTML = "Password is required";
-      emailText.innerHTML = "";
-      nametext.innerHTML = "";
-      if (
-        !String(emailForm)
-          .toLowerCase()
-          .match(
-            /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-          )
-      ) {
-        emailText.innerHTML = "Email is invalid";
-        return;
-      } else {
-        document
-          .getElementById("emailAddess")
-          .classList.remove("is-invalid");
-        emailText.innerHTML = "";
-      }
-      return false;
-    } else {
-      if (
-        !String(emailForm)
-          .toLowerCase()
-          .match(
-            /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-          )
-      ) {
-        emailText.innerHTML = "Email is invalid";
-        nametext.innerHTML = "";
-        passwordText.innerHTML = "";
-        return;
-      }
-      nametext.innerHTML = "";
-      emailText.innerHTML = "";
-      passwordText.innerHTML = "";
-        window.location.href = "./login.html";
-    }
-  }
-      
+      const userAction = async () => {
+        let xhr = new XMLHttpRequest();
+        xhr.open("POST", "http://localhost:8080/api/signUp");
+        xhr.setRequestHeader("Content-type", "application/json");
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState === 4) {
+            console.log(xhr.status);
+            console.log(xhr.responseText);
+            if (xhr.status == 201) {
+              document.forms["signUpForm"]["name"].value = "";
+              document.forms["signUpForm"]["email"].value = "";
+              document.forms["signUpForm"]["password"].value = "";
+              document.getElementById("toastMessage").classList.add("show");
+              setTimeout(() => {
+                document
+                  .getElementById("toastMessage")
+                  .classList.remove("show");
+                window.location.href = "./login.html";
+              }, 2000);
+            }
+          }
+        };
+
+        let data = JSON.stringify({
+          name: document.forms["signUpForm"]["name"].value,
+          email: document.forms["signUpForm"]["email"].value,
+          password: document.forms["signUpForm"]["password"].value,
+          roleID: 2,
+        });
+
+        xhr.send(data);
+        if (condition) {
+        }
+      };
     </script>
   </body>
 </html>
