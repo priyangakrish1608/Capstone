@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
+    <title>Printers</title>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-      
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
       
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -21,11 +24,17 @@
     />
     <link rel="stylesheet" href="./css/navbar.css" />
     <link rel="stylesheet" href="./css/new_Style.css" />
-    <title>Home</title>
-    
-  </head>
-  <body>
-    <div class="container container-xl container-xxl container-lg">
+   
+    <style>
+
+      img{
+          height: 250px;
+      }
+    </style>
+</head>
+<body>
+
+<div class="container container-xl container-xxl container-lg">
       <div class="d-flex sticky-top">
         <div class="w-25 bg-light">
           <h1>Elite<span>Company</span></h1>
@@ -105,6 +114,7 @@
           </div>
         </nav>
       </div>
+
       <nav class=" innerNav navbar-expand-md ">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="navbarSupportedContent">
         <span class="navbar-toggler-icon"></span>
@@ -159,215 +169,117 @@
             </li>
           </ul>
       </nav>
-      <div>
-        <div
-          id="carouselExampleCaptions"
-          class="carousel slide"
-          data-bs-ride="carousel"
-        >
-          <div class="carousel-indicators">
-            <button
-              type="button"
-              data-bs-target="#carouselExampleCaptions"
-              data-bs-slide-to="0"
-              class="active"
-              aria-current="true"
-              aria-label="Slide 1"
-            ></button>
-            <button
-              type="button"
-              data-bs-target="#carouselExampleCaptions"
-              data-bs-slide-to="1"
-              aria-label="Slide 2"
-            ></button>
-            <button
-              type="button"
-              data-bs-target="#carouselExampleCaptions"
-              data-bs-slide-to="2"
-              aria-label="Slide 3"
-            ></button>
-            <button
-              type="button"
-              data-bs-target="#carouselExampleCaptions"
-              data-bs-slide-to="3"
-              aria-label="Slide 4"
-            ></button>
-            <button
-              type="button"
-              data-bs-target="#carouselExampleCaptions"
-              data-bs-slide-to="4"
-              aria-label="Slide 5"
-            ></button>
-          </div>
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img
-                src="./assets/HomePage/Carousel/img1.png"
-                class="d-block w-100"
-                alt="..."
-              />  
-            </div>
-            <div class="carousel-item">
-              <img
-                src="./assets/HomePage/Carousel/img2.png"
-                class="d-block w-100"
-                alt="..."
-              />
-            </div>
-            <div class="carousel-item">
-              <img
-                src="./assets/HomePage/Carousel/img3.png"
-                class="d-block w-100"
-                alt="..."
-              />
-            </div>
-            <div class="carousel-item">
-              <img
-                src="./assets/HomePage/Carousel/img4.png"
-                class="d-block w-100"
-                alt="..."
-              />
-            </div>
-            <div class="carousel-item">
-              <img
-                src="./assets/HomePage/Carousel/img5.png"
-                class="d-block w-100"
-                alt="..."
-              />
-            </div>
-            
-          </div>
-          <button
-            class="carousel-control-prev"
-            type="button"
-            data-bs-target="#carouselExampleCaptions"
-            data-bs-slide="prev"
-          >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button
-            class="carousel-control-next"
-            type="button"
-            data-bs-target="#carouselExampleCaptions"
-            data-bs-slide="next"
-          >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div>
+
+<!---------- Printer Container Code Starts -------------->
+
+<div class="container my-4"><h3>Printers</h3></div>
+
+    <div class="container mb-4">
+     <div class="row">
+     <div class="col">
+      <div class="card mb-4" style="width: 300px">
+         <div class="card-header">
+            <img src="./assets/Electronics/Printer/hpdeskjet.jpg" class="card-img-top">
+         </div>
+         <div class="card-body text-center">
+            <h5>hp Deskjet 7FR21B</h5>
+            <span class="text-muted">Rs.9,490</span><br>
+<span class="text-success">7% Offer</span>
+         </div>
+         <div class="card-footer text-center">
+             <a href="#" class="btn btn-primary btn-block">Buy Now</a>
+         </div>
       </div>
-      <div class="row">
-        <div class="card-group" >
-          <div class="card">
-            <div class="card-body">
-              <div class="card" style="width: 15rem;">
-                  <h5 class="card-title text-center">Women Kurtas and kurtis</h5>
-                  <h6 class="card-subtitle mb-2 text-center text-muted">Under Rs 255</p>
-                  <img src="./assets/HomePage/kurtafrontpage.jpg" alt="" class="img-fluid"  />
-                  <div class="text-center">
-                  <button class="btn  mt-2 btn-info text-white">Buy now</button>
-                </div>
-                </div>
-              </div>
-          </div>
-          
-          <div class="card">
-            <div class="card-body">
-              <div class="card" style="width: 15rem;">
-                  <h5 class="card-title text-center">Best selling footware</h5>
-                  <h6 class="card-subtitle mb-2 text-center text-muted">Under Rs 255</p>
-                  <img src="./assets/HomePage/reshoefront.jpg" class="img-fluid" alt=""   />
-                  <div class="text-center">
-                    <button class="btn  mt-2 btn-info text-white">Buy now</button>
-                  </div>
-                  
-              </div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-body">
-              <div class="card" style="width: 15rem;">
-                  <h5 class="card-title text-center">Men's T-shirts</h5>
-                  <h6 class="card-subtitle text-center mb-2 text-muted">Top Picks</p>
-                  <img src="./assets/HomePage/Mentshirt.jpg"  alt="" class="img-fluid"  />
-                  <div class="text-center">
-                  <button class="btn  mt-2 btn-info text-white">Buy now</button>
-                  </div>
-              </div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-body">
-              <div class="card" style="width: 15rem;">
-                  <h5 class="card-title text-center">Gowns and lehengas</h5>
-                  <h6 class="card-subtitle text-center mb-2 text-muted">Under Rs 299</p>
-                  <img src="./assets/HomePage/lehengafrontpage.jpg" alt="" class="img-fluid"  />
-                  <div class="text-center ">
-                  <button class="btn  mt-2 btn-info text-white">Buy now</button>
-                  </div>
-              </div>
-            </div>
-          </div>
-          
+     </div>
+
+     <div class="col">
+      <div class="card mb-4" style="width: 300px">
+         <div class="card-header">
+            <img src="./assets/Electronics/Printer/lexmark.jpg" class="card-img-top">
+         </div>
+         <div class="card-body text-center">
+            <h5>Lexmark Interpret S405</h5>
+            <span class="text-muted">Rs.40,200</span><br>
+<span class="text-success">7% Offer</span>
+         </div>
+         <div class="card-footer text-center">
+             <a href="#" class="btn btn-primary btn-block">Buy Now</a>
+         </div>
       </div>
-      <div class="row">
-        <div class="card-group">
-          <div class="card">
-            <div class="card-body">
-              <div class="card" style="width: 15rem;">
-                  <h5 class="card-title text-center">Fashion Jwellery</h5>
-                  <h6 class="card-subtitle text-center mb-2 text-muted">Top Picks</p>
-                  <img src="./assets/HomePage/fashionjwel.jpg" alt="" class="img-fluid"  />
-                  <div class="text-center ">
-                  <button class="btn mt-2 btn-info text-white">Buy now</button>
-                  </div>
-                 </div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-body">
-              <div class="card" style="width: 15rem;">
-                  <h5 class="card-title text-center">Hp Cromebook</h5>
-                  <h6 class="card-subtitle text-center mb-2 text-muted">Best Offers</p>
-                  <img src="./assets/HomePage/HpCromebook.jpg" alt="" class="img-fluid"/>
-                  <div class="text-center">
-                    <button class="btn btn-info text-white">Buy now</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          <div class="card">
-            <div class="card-body">
-                <div class="card" style="width: 15rem;">
-                    <h5 class="card-title text-center">Noise Air Buds</h5>
-                    <h6 class="card-subtitle text-center mb-2 text-muted">Best Offers</p>
-                    <img src="./assets/HomePage/noiseairbuds.jpg" class="img-fluid"  />
-                    <div class="text-center">
-                      <button class="btn btn-info text-white">Buy now</button>
-                    </div>                
-                </div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-body">
-              <div class="card" style="width: 15rem;">
-                  <img src="./assets/HomePage/iphone13.jpg"  alt=""   />
-                  <h5 class="card-title text-center">Iphone 13</h5>
-                  <h6 class="card-subtitle mb-2 text-center">Top Picks</p>
-                  <div class="text-center">
-                  <button class="btn btn-info text-white">Buy now</button>
-                  </div>                
-              </div>
-            </div>
-          </div>
-            
-            
-            
-        </div>
+     </div>          
+
+     <div class="col">
+      <div class="card mb-4" style="width: 300px">
+         <div class="card-header">
+            <img src="./assets/Electronics/Printer/kyoceraecosys.jpg" class="card-img-top">
+         </div>
+         <div class="card-body text-center">
+            <h5>Kyocera Ecosys</h5>
+            <span class="text-muted">Rs.30,900</span><br>
+<span class="text-success">7% Offer</span>
+         </div>
+         <div class="card-footer text-center">
+             <a href="#" class="btn btn-primary btn-block">Buy Now</a>
+         </div>
       </div>
+     </div>
+
+     <div class="col">
+      <div class="card mb-4" style="width: 300px">
+         <div class="card-header">
+            <img src="./assets/Electronics/Printer/xiaomi.jpg" class="card-img-top">
+         </div>
+         <div class="card-body text-center">
+            <h5>Xiaomi Photo Printer</h5>
+            <span class="text-muted">Rs.18,800</span><br>
+<span class="text-success">7% Offer</span>
+         </div>
+         <div class="card-footer text-center">
+             <a href="#" class="btn btn-primary btn-block">Buy Now</a>
+         </div>
+      </div>
+     </div>
+
+    <div class="col">
+      <div class="card mb-4" style="width: 300px">
+         <div class="card-header">
+            <img src="./assets/Electronics/Printer/epsonecotank.jpg" class="card-img-top">
+         </div>
+         <div class="card-body text-center">
+            <h5>Epson Eco Tank</h5>
+            <span class="text-muted">Rs.12,999</span><br>
+<span class="text-success">7% Offer</span>
+         </div>
+         <div class="card-footer text-center">
+             <a href="#" class="btn btn-primary btn-block">Buy Now</a>
+         </div>
+      </div>
+     </div>
+
+     <div class="col">
+      <div class="card mb-4" style="width: 300px">
+         <div class="card-header">
+            <img src="./assets/Electronics/Printer/fuji.jpg" class="card-img-top">
+         </div>
+         <div class="card-body text-center">
+            <h5>Fuji Flim Instax SP3</h5>
+            <span class="text-muted">Rs.23,400</span><br>
+<span class="text-success">7% Offer</span>
+         </div>
+         <div class="card-footer text-center">
+             <a href="#" class="btn btn-primary btn-block">Buy Now</a>
+         </div>
+     </div> 
     </div>
-    <footer class="footer">
+    </div>
+   </div>
+
+
+
+<!------- Printer Container Code Ends --------->
+
+
+<footer class="footer">
       <div class="container">
       <div class="row">
         <div class="footer-col">
@@ -411,8 +323,9 @@
       </div>
     </footer>
     </div>
-    
-    <script
+
+
+<script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
@@ -427,11 +340,5 @@
       integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
       crossorigin="anonymous"
     ></script>
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-      
-
-  </body>
+</body>
 </html>
