@@ -23,7 +23,23 @@
           <div class="d-flex flex-row align-items-center mb-4">
             <div class="form-outline flex-fill mb-0">
               <div class="form-floating">
-                <input type="text" name="name" placeholder="Name" />
+                <input type="text" name="firstname" placeholder="FirstName" />
+                <div id="firstname" style="color: red"></div>
+              </div>
+            </div>
+          </div>
+          <div class="d-flex flex-row align-items-center mb-4">
+            <div class="form-outline flex-fill mb-0">
+              <div class="form-floating">
+                <input type="text" name="lastname" placeholder="LastName" />
+                <div id="lastname" style="color: red"></div>
+              </div>
+            </div>
+          </div>
+          <div class="d-flex flex-row align-items-center mb-4">
+            <div class="form-outline flex-fill mb-0">
+              <div class="form-floating">
+                <input type="number" name="age" placeholder="Age" />
                 <div id="name" style="color: red"></div>
               </div>
             </div>
@@ -106,6 +122,7 @@
     <script src="jquery-3.6.0.min.js"></script>
     <script>
       function validateLoginForm() {
+        console.log(1);
         let ourForm = document.getElementById("loginFormId");
         function handleForm(event) {
           event.preventDefault();
@@ -115,20 +132,30 @@
         let emailText = document.getElementById("emailID");
         let passwordForm = document.forms["signUpForm"]["password"].value;
         let passwordText = document.getElementById("password");
-        let nameForm = document.forms["signUpForm"]["name"].value;
-        let nametext = document.getElementById("name");
-        if (emailForm == "" && passwordForm == "" && nameForm == "") {
+        let firstnameForm = document.forms["signUpForm"]["firstname"].value;
+        let firstnametext = document.getElementById("firstname");
+        let lastnameForm = document.forms["signUpForm"]["lastname"].value;
+        let lastnametext = document.getElementById("lastname");
+        if (
+          emailForm == "" &&
+          passwordForm == "" &&
+          firstnameForm == "" &&
+          lastnameForm == ""
+        ) {
           emailText.innerHTML = "Email is required";
           passwordText.innerHTML = "Password is required";
-          nametext.innerHTML = "Name is required";
+          firstnametext.innerHTML = "FirstName is required";
+          lastnametext.innerHTML = "Lastname is required";
           return false;
         } else if (emailForm == "") {
           emailText.innerHTML = "Email is required";
-          nametext.innerHTML = "";
+          firstnametext.innerHTML = "";
+          lasttnametext.innerHTML = "";
           passwordText.innerHTML = "";
           return false;
         } else if (nameForm == "") {
-          nametext.innerHTML = "Name is required";
+          firstnametext.innerHTML = "FirstName is required";
+          lasttnametext.innerHTML = "LastName is required";
           emailText.innerHTML = "";
           passwordText.innerHTML = "";
           if (
