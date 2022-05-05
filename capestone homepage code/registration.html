@@ -171,6 +171,13 @@
           emailText.innerHTML = "";
           passwordText.innerHTML = "";
           
+          
+        } else if (nameForm == "") {
+          firstnameText.innerHTML = "FirstName is required";
+          lastnameText.innerHTML = "LastName is required";
+          emailText.innerHTML = "";
+          passwordText.innerHTML = "";
+          
           if (
             !String(emailForm)
               .toLowerCase()
