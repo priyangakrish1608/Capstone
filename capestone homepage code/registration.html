@@ -182,7 +182,7 @@
             return;
           } else {
             document
-              .getElementById("emailAddess")
+              .getElementById("emailAddress")
               .classList.remove("is-invalid");
             emailText.innerHTML = "";
           }
@@ -238,6 +238,7 @@
               document.forms["signUpForm"]["name"].value = "";
               document.forms["signUpForm"]["email"].value = "";
               document.forms["signUpForm"]["password"].value = "";
+              document.forms["signUpForm"]["age"].value = "";
               document.getElementById("toastMessage").classList.add("show");
               setTimeout(() => {
                 document
