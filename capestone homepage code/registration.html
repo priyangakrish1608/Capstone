@@ -49,6 +49,8 @@
               <div class="form-floating">
                 <input type="email" name="email" placeholder="Email" />
                 <div id="emailID" style="color: red"></div>
+                
+                
               </div>
             </div>
           </div>
@@ -57,6 +59,14 @@
               <div class="form-floating">
                 <input type="password" name="password" placeholder="Password" />
                 <div id="password" style="color: red"></div>
+              </div>
+            </div>
+          </div>
+          <div class="d-flex flex-row align-items-center mb-4">
+            <div class="form-outline flex-fill mb-0">
+              <div class="form-floating">
+                <input type="number" name="phonenumber" placeholder="PhoneNumber" />
+                <div id="number" style="color: red"></div>
               </div>
             </div>
           </div>
@@ -88,13 +98,11 @@
     <div
       class="toast align-items-center text-white bg-primary border-0 me-3 mb-4 ms-auto"
       role="alert"
-      style="
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        z-index: 9999;
-        float: 'right';
-      "
+      style="position: absolute;
+             bottom: 0;
+             right: 0;
+             z-index: 9999;
+             float: 'right';"
       id="toastMessage"
       aria-live="assertive"
       aria-atomic="true"
@@ -136,28 +144,33 @@
         let firstnametext = document.getElementById("firstname");
         let lastnameForm = document.forms["signUpForm"]["lastname"].value;
         let lastnametext = document.getElementById("lastname");
+        
         if (
-          emailForm == "" &&
-          passwordForm == "" &&
-          firstnameForm == "" &&
-          lastnameForm == ""
+          emailForm == "" && 
+          passwordForm == "" && 
+          firstnameForm == "" && 
+          lastnameForm == "" 
+          
         ) {
           emailText.innerHTML = "Email is required";
           passwordText.innerHTML = "Password is required";
-          firstnametext.innerHTML = "FirstName is required";
-          lastnametext.innerHTML = "Lastname is required";
+          firstnameText.innerHTML = "FirstName is required";
+          lastnameText.innerHTML = "Lastname is required";
+          phonenumberText.innerHTML = "PhoneNumber is required";
           return false;
         } else if (emailForm == "") {
           emailText.innerHTML = "Email is required";
-          firstnametext.innerHTML = "";
-          lasttnametext.innerHTML = "";
+          firstnameText.innerHTML = "";
+          lastnameText.innerHTML = "";
           passwordText.innerHTML = "";
+          phonenumberText.innerHTML = "";
           return false;
         } else if (nameForm == "") {
-          firstnametext.innerHTML = "FirstName is required";
-          lasttnametext.innerHTML = "LastName is required";
+          firstnameText.innerHTML = "FirstName is required";
+          lastnameText.innerHTML = "LastName is required";
           emailText.innerHTML = "";
           passwordText.innerHTML = "";
+          
           if (
             !String(emailForm)
               .toLowerCase()
