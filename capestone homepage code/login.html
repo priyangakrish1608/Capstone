@@ -239,8 +239,9 @@
         xhr.onreadystatechange = function () {
           if (xhr.readyState === 4) {
             console.log(xhr.responseText); 
-            // response = JSON.parse(xhr.responseText);
-            if (xhr.responseText != "") {
+            response = JSON.parse(xhr.responseText);
+            console.log(response); 
+            if (response.status == "OK") {
               loginUserDetails = JSON.parse(xhr.responseText)?.responceObject[0];
               localStorage.setItem("loginUserDetails", JSON.stringify(loginUserDetails));
               document.forms["loginForm"]["email"].value = "";
@@ -252,7 +253,7 @@
               window.location.href = "./new_Home.html";
               }, 2000);
             } else {
-              document.getElementById("dangerToast").innerHTML = "Check email and password";
+              document.getElementById("dangerToast").innerHTML = response.message;
               document.getElementById("toastMessageDanger").classList.add("show");
               setTimeout(() => {
               document.getElementById("toastMessageDanger").classList.remove("show");
