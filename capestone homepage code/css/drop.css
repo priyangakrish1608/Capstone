@@ -1,0 +1,14 @@
+
+h1 {
+    font-family: arial;
+}
+.flex {
+    line-height: 1.5;
+}
+.border-right {
+    border-right: 1px solid black;
+}
+.container1 {
+    max-width: 70%;
+    margin: auto;
+}
