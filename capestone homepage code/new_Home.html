@@ -512,9 +512,10 @@
         var elem;
         var loginDetails;
         var nameElem;
-        
+        loginDetails = JSON.parse(localStorage.getItem("loginUserDetails"));
         elem = document.getElementById("loginUserDetails");
-        if (elem==null) {
+        
+        if (loginDetails == null) {
           elem.innerHTML = "<a class='nav-link' href='./login.html'>Login</a>"
         } else {
           loginDetails = JSON.parse(localStorage.getItem("loginUserDetails"));
