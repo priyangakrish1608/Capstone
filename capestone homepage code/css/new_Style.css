@@ -3,7 +3,17 @@
     height: 3em;       /* height is 2x line-height, so two lines will display */
     overflow: hidden;  /* prevents extra lines from being visible */
 }
-
+iframe 
+{
+ display: block; 
+ width: 100%; 
+ border: none; 
+ overflow-y: auto; 
+ overflow-x: hidden;
+}
+.dropdown-menu{
+    z-index: 999999;
+}
 
 
 .innerNav { 
