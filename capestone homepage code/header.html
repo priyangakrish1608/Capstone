@@ -124,9 +124,9 @@
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDrpdown" role="button" data-toggle="dropdown">Fashion</a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="MENS WEAR.html" target="_parent">MENS WEAR</a>
-                <a class="dropdown-item" href="WOMENS WEAR.html" target="_parent">WOMEN WEAR</a>
-                <a class="dropdown-item" href="KIDS WEAR.html" target="_parent">KIDS WEAR</a>
+                <a class="dropdown-item" href="MENS WEAR.html" target="_parent">Mens Wear</a>
+                <a class="dropdown-item" href="WOMENS WEAR.html" target="_parent">Women Wear</a>
+                <a class="dropdown-item" href="KIDS WEAR.html" target="_parent">Kids Wear</a>
               </div>
             </li>
             <li class="nav-item dropdown">
@@ -185,17 +185,17 @@
         elem = document.getElementById("loginUserDetails");
         orA = document.getElementById("orderOrAdmin");
         if (loginDetails == null) {
-          elem.innerHTML = "<a class='nav-link' href='./login.html'>Login</a>";
+          elem.innerHTML = "<a class='nav-link' target='_parent' href='./login.html'>Login</a>";
         } else {
           loginDetails = JSON.parse(localStorage.getItem("loginUserDetails"));
-          elem.innerHTML = "<a class='nav-link' href='./login.html' onclick='localStorage.clear();'>Logout</a>"
+          elem.innerHTML = "<a class='nav-link' href='./login.html' target='_parent' onclick='localStorage.clear();'>Logout</a>"
           nameElem = document.getElementById("userName");
           nameElem.innerHTML = `<a class='nav-link'>${loginDetails.name}</a>`;
           if (loginDetails.roleID == 1) {
-            orA.innerHTML = "<a class='nav-link' href='./admin.html'>Add Product</a>";
-            cou.innerHTML = "<a class='nav-link' href='./coupon.html'>Add Coupon</a>";
+            orA.innerHTML = "<a class='nav-link' href='./admin.html' target='_parent'>Add Product</a>";
+            cou.innerHTML = "<a class='nav-link' href='./coupon.html' target='_parent'>Add Coupon</a>";
           } else {
-            orA.innerHTML = "<a class='nav-link' href='./ordersanddelivery.html'>Order Details</a>";
+            orA.innerHTML = "<a class='nav-link' href='./ordersanddelivery.html' target='_parent'>Order Details</a>";
             cou.innerHTML = "<a class='nav-link'>Call-us: +91 7893261915</a>";
           }
         }
