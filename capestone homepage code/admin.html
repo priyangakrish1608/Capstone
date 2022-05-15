@@ -41,6 +41,7 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="d-flex">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -51,8 +52,18 @@
                   <li><a class="dropdown-item" href="./admin.html">Add product</a></li>
                 </ul>
               </li>
-              
             </ul>
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0 me-lg-0">
+              <li class="nav-item" id="userName">
+                    
+              </li>
+              <li class="nav-item" id="loginUserDetails">
+                <a class="nav-link" target="_parent" href="./login.html" onclick="localStorage.clear()">Logout</a>
+              </li>
+            </ul>
+            </div>
+              
+           
             
           </div>
         </div>
@@ -120,6 +131,13 @@
 
 
     <script>
+      window.onload = function () {
+       var loginDetails;
+        var nameElem;
+      loginDetails = JSON.parse(localStorage.getItem("loginUserDetails"));
+      nameElem = document.getElementById("userName");
+          nameElem.innerHTML = `<a class='nav-link'>${loginDetails.name}</a>`;
+      }
         const userAction = async () => {
         let ourForm = document.getElementById("addProductFormID");
         function handleForm(event) {
