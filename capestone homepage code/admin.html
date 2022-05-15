@@ -36,7 +36,7 @@
     <div class="container container-xl container-xxl container-lg">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Navbar</a>
+          <a class="navbar-brand" href="#">Admin</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -48,8 +48,17 @@
                   Add Product / Add Coupon
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="./coupon.html">Add coupon</a></li>
+                  <li><a class="dropdown-item" href="./couponcode.html">Add coupon</a></li>
                   <li><a class="dropdown-item" href="./admin.html">Add product</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  List Product / List Coupon
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="./couponList.html">List coupon</a></li>
+                  <li><a class="dropdown-item" href="./listProduct.html">List product</a></li>
                 </ul>
               </li>
             </ul>
@@ -72,7 +81,7 @@
         <div class="row">
             <div class="col-md-6 offset-md-3">
                 <div class="product-form">
-                    <form action="" id="addProductFormID" name="addProductForm" class="mt-5 border p-4 bg-light shadow">
+                    <form action="" autocomplete="off" id="addProductFormID" name="addProductForm" class="mt-5 border p-4 bg-light shadow">
                         <h4 class="mb-5 text-secondary">Add Your Product</h4>
                         <div class="row">
                             <div class="mb-3 col-md-6">
@@ -117,7 +126,7 @@
         class="toast align-items-center text-white bg-primary border-0 me-3 mb-4 ms-auto"
         role="alert"
         style="
-          position: absolute;
+          position: fixed;
           bottom: 0;
           right: 0;
           z-index: 9999;

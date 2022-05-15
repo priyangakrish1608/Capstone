@@ -36,11 +36,12 @@
     <div class="container container-xl container-xxl container-lg">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Navbar</a>
+          <a class="navbar-brand" href="#">Admin</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="d-flex">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -51,9 +52,26 @@
                   <li><a class="dropdown-item" href="./admin.html">Add product</a></li>
                 </ul>
               </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  List Product / List Coupon
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="./couponList.html">List coupon</a></li>
+                  <li><a class="dropdown-item" href="./listProduct.html">List product</a></li>
+                </ul>
+              </li>
               
             </ul>
-            
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 me-lg-0">
+              <li class="nav-item" id="userName">
+                    
+              </li>
+              <li class="nav-item" id="loginUserDetails">
+                <a class="nav-link" target="_parent" href="./login.html" onclick="localStorage.clear()">Logout</a>
+              </li>
+            </ul>
+          </div>
           </div>
         </div>
       </nav>
@@ -61,7 +79,7 @@
         <div class="row">
             <div class="col-md-6 offset-md-3">
                 <div class="product-form">
-                    <form action="" id="addProductFormID" name="addProductForm" class="mt-5 border p-4 bg-light shadow">
+                    <form action="" autocomplete="off" id="addCouponFormID" name="addCouponForm" class="mt-5 border p-4 bg-light shadow">
                         <h4 class="mb-5 text-secondary">Add Your Coupon</h4>
                         <div class="row">
                             <div class="mb-3 col-md-6">
@@ -77,16 +95,16 @@
                             </div>
                             <div class="mb-3 col-md-6">
                                 <label>Coupon Name<span class="text-danger">*</span></label>
-                                <input type="text" name="pName" class="form-control"placeholder="Enter Coupon Name">
+                                <input type="text" name="cName" class="form-control"placeholder="Enter Coupon Name">
                             </div>
                           
                             <div class="mb-3 col-md-6">
                                 <label>Coupon Code<span class="text-danger">*</span></label>
-                                <input type="text" name="pPrice" class="form-control" placeholder="Enter Coupon Code">
+                                <input type="text" name="cCode" class="form-control" placeholder="Enter Coupon Code">
                             </div>
                             <div class="mb-3 col-md-6">
                                 <label>Discount<span class="text-danger">*</span></label>
-                                <input type="text" name="imageURL" class="form-control" placeholder="Enter Discount Price">
+                                <input type="text" name="cAmount" class="form-control" placeholder="Enter Discount Price">
                             </div>
                             
                             <div class="mb-3 col-md-12">
@@ -103,7 +121,7 @@
         class="toast align-items-center text-white bg-primary border-0 me-3 mb-4 ms-auto"
         role="alert"
         style="
-          position: absolute;
+          position: fixed;
           bottom: 0;
           right: 0;
           z-index: 9999;
@@ -114,32 +132,39 @@
         aria-atomic="true"
       >
         <div class="d-flex">
-          <div class="toast-body">Product Added Successfully</div>
+          <div class="toast-body">Coupon Added Successfully</div>
         </div>
       </div>
 
 
     <script>
+      window.onload = function () {
+       var loginDetails;
+        var nameElem;
+      loginDetails = JSON.parse(localStorage.getItem("loginUserDetails"));
+      nameElem = document.getElementById("userName");
+          nameElem.innerHTML = `<a class='nav-link'>${loginDetails.name}</a>`;
+      }
         const userAction = async () => {
-        let ourForm = document.getElementById("addProductFormID");
+        let ourForm = document.getElementById("addCouponFormID");
         function handleForm(event) {
           event.preventDefault();
         }
-        if (document.forms["addProductForm"]["productType"].value == "" || document.forms["addProductForm"]["pName"].value == "" || document.forms["addProductForm"]["pPrice"].value == "" || document.forms["addProductForm"]["imageURL"].value == "") {
+        if (document.forms["addCouponForm"]["productType"].value == "" || document.forms["addCouponForm"]["cName"].value == "" || document.forms["addCouponForm"]["cCode"].value == "" || document.forms["addCouponForm"]["cAmount"].value == "") {
           alert("Please fill all fields");
           return
         }
         ourForm.addEventListener("submit", handleForm);
         let xhr = new XMLHttpRequest();
-        xhr.open("POST", "http://localhost:8080/api/addProduct");
+        xhr.open("POST", "http://localhost:8080/api/addCoupon");
         xhr.setRequestHeader("Content-type", "application/json");
         xhr.onreadystatechange = function () {
           if (xhr.readyState === 4) {
             if (xhr.status == 201) {
-              document.forms["addProductForm"]["productType"].value = "";
-              document.forms["addProductForm"]["pName"].value = "";
-              document.forms["addProductForm"]["pPrice"].value = "";
-              document.forms["addProductForm"]["imageURL"].value = "";
+              document.forms["addCouponForm"]["productType"].value = "";
+              document.forms["addCouponForm"]["cName"].value = "";
+              document.forms["addCouponForm"]["cCode"].value = "";
+              document.forms["addCouponForm"]["cAmount"].value = "";
               document.getElementById("toastMessage").classList.add("show");
               setTimeout(() => {
                 document
@@ -151,10 +176,10 @@
         };
 
         let data = JSON.stringify({
-        categoryID: document.forms["addProductForm"]["productType"].value,
-        materialName: document.forms["addProductForm"]["pName"].value,
-        price: document.forms["addProductForm"]["pPrice"].value,
-        imageURL: document.forms["addProductForm"]["imageURL"].value,
+        categoryID: document.forms["addCouponForm"]["productType"].value,
+        couponName: document.forms["addCouponForm"]["cName"].value,
+        couponCode: document.forms["addCouponForm"]["cCode"].value,
+        discount: document.forms["addCouponForm"]["cAmount"].value,
         });
         xhr.send(data);
       };
