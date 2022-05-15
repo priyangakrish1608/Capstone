@@ -99,7 +99,10 @@
                                 <label for="formFile" class="form-label">Upload Product Image</label>
                                 <input type="text" name="imageURL" class="form-control" placeholder="Enter Image URL">
                             </div>
-                            
+                            <div class="mb-3 col-md-6">
+                              <label for="formFile" class="form-label">Description</label>
+                              <input type="text" name="description" class="form-control" placeholder="Enter Description">
+                          </div>
                             <div class="mb-3 col-md-12">
                                 <button class="btn btn-primary float-end" onclick="userAction()">Add</button>
                             </div>
@@ -143,7 +146,7 @@
         function handleForm(event) {
           event.preventDefault();
         }
-        if (document.forms["addProductForm"]["productType"].value == "" || document.forms["addProductForm"]["pName"].value == "" || document.forms["addProductForm"]["pPrice"].value == "" || document.forms["addProductForm"]["imageURL"].value == "") {
+        if (document.forms["addProductForm"]["productType"].value == "" || document.forms["addProductForm"]["pName"].value == "" || document.forms["addProductForm"]["pPrice"].value == "" || document.forms["addProductForm"]["imageURL"].value == "" || document.forms["addProductForm"]["description"].value == "") {
           alert("Please fill all fields");
           return
         }
@@ -158,6 +161,7 @@
               document.forms["addProductForm"]["pName"].value = "";
               document.forms["addProductForm"]["pPrice"].value = "";
               document.forms["addProductForm"]["imageURL"].value = "";
+              document.forms["addProductForm"]["description"].value = "";
               document.getElementById("toastMessage").classList.add("show");
               setTimeout(() => {
                 document
@@ -173,6 +177,7 @@
         materialName: document.forms["addProductForm"]["pName"].value,
         price: document.forms["addProductForm"]["pPrice"].value,
         imageURL: document.forms["addProductForm"]["imageURL"].value,
+        description: document.forms["addProductForm"]["description"].value
         });
         xhr.send(data);
       };
