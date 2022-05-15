@@ -233,6 +233,7 @@
         let xhr = new XMLHttpRequest();
         let toast;
         let loginUserDetails;
+        let loginDetails;
         let response = [];
         xhr.open("POST", "http://localhost:8080/api/login");
         xhr.setRequestHeader("Content-type", "application/json");
@@ -249,8 +250,13 @@
               toast = document.getElementById("toastMessage");
               document.getElementById("toastMessage").classList.add("show");
               setTimeout(() => {
+                loginDetails = JSON.parse(localStorage.getItem("loginUserDetails"));
               document.getElementById("toastMessage").classList.remove("show");
-              window.location.href = "./new_Home.html";
+              if (loginDetails.roleID == 1) {
+                window.location.href = "./admin.html";
+              } else {
+                window.location.href = "./new_Home.html";
+              }
               }, 2000);
             } else {
               document.getElementById("dangerToast").innerHTML = response.message;

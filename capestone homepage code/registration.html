@@ -198,8 +198,6 @@
         xhr.setRequestHeader("Content-type", "application/json");
         xhr.onreadystatechange = function () {
           if (xhr.readyState === 4) {
-            console.log(xhr.status);
-            console.log(xhr.responseText);
             if (xhr.status == 201) {
               document.forms["signUpForm"]["name"].value = "";
               document.forms["signUpForm"]["email"].value = "";

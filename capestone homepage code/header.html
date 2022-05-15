@@ -191,13 +191,7 @@
           elem.innerHTML = "<a class='nav-link' href='./login.html' target='_parent' onclick='localStorage.clear();'>Logout</a>"
           nameElem = document.getElementById("userName");
           nameElem.innerHTML = `<a class='nav-link'>${loginDetails.name}</a>`;
-          if (loginDetails.roleID == 1) {
-            orA.innerHTML = "<a class='nav-link' href='./admin.html' target='_parent'>Add Product</a>";
-            cou.innerHTML = "<a class='nav-link' href='./coupon.html' target='_parent'>Add Coupon</a>";
-          } else {
-            orA.innerHTML = "<a class='nav-link' href='./ordersanddelivery.html' target='_parent'>Order Details</a>";
-            cou.innerHTML = "<a class='nav-link'>Call-us: +91 7893261915</a>";
-          }
+          
         }
         
       }

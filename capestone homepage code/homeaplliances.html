@@ -33,98 +33,9 @@
         <h3>stabilizers</h3>
       </div>
       <div class="container mb-4">
-        <div class="row">
+        <div class="row" id="images">
 
-          <div class="col">
-            <div class="card mb-4" style="width: 300px">
-              <div class="card-header">
-                <img src="./assets/home aplliances images/livguard.jpg" class="card-img-top">
-              </div>
-              <div class="card-body text-center">
-                <h5>livguardR15</h5>
-                <span class="text-muted">Rs.1900</span><br>
-                <span class="text-success">10% Offer</span>
-              </div>
-              <div class="card-footer text-center">
-                <a href="#" class="btn btn-primary btn-block">Buy Now</a>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card mb-4" style="width: 300px">
-              <div class="card-header">
-                <img src="./assets/home aplliances images/vquard.jpg" class="card-img-top">
-              </div>
-              <div class="card-body text-center">
-                <h5>vguardid5</h5>
-                <span class="text-muted">Rs1900</span><br>
-                <span class="text-success">15% Offer</span>
-              </div>
-              <div class="card-footer text-center">
-                <a href="#" class="btn btn-primary btn-block">Buy Now</a>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card mb-4" style="width: 300px">
-              <div class="card-header">
-                <img src="./assets/home aplliances images/whirlpool.jpg" class="card-img-top">
-              </div>
-              <div class="card-body text-center">
-                <h5>whirlpoolid4</h5>
-                <span class="text-muted">Rs.2900</span><br>
-                <span class="text-success">20% Offer</span>
-              </div>
-              <div class="card-footer text-center">
-                <a href="#" class="btn btn-primary btn-block">Buy Now</a>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card mb-4" style="width: 300px">
-              <div class="card-header">
-                <img src="./assets/home aplliances images/whirpool.jpg" class="card-img-top">
-              </div>
-              <div class="card-body text-center">
-                <h5>whirlpoolid6</h5>
-                <span class="text-muted">Rs.2900</span><br>
-                <span class="text-success">15% Offer</span>
-              </div>
-              <div class="card-footer text-center">
-                <a href="#" class="btn btn-primary btn-block">Buy Now</a>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card mb-4" style="width: 300px">
-              <div class="card-header">
-                <img src="./assets/home aplliances images/whirpool.jpg" class="card-img-top">
-              </div>
-              <div class="card-body text-center">
-                <h5>Whirlpool id 7</h5>
-                <span class="text-muted">Rs.3,900</span><br>
-                <span class="text-success">10% Offer</span>
-              </div>
-              <div class="card-footer text-center">
-                <a href="#" class="btn btn-primary btn-block">Buy Now</a>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card mb-4" style="width: 300px">
-              <div class="card-header">
-                <img src="./assets/home aplliances images/luminous.jpg" class="card-img-top">
-              </div>
-              <div class="card-body text-center">
-                <h5>luminousid4</h5>
-                <span class="text-muted">Rs.2,500</span><br>
-                <span class="text-success">10% Offer</span>
-              </div>
-              <div class="card-footer text-center">
-                <a href="#" class="btn btn-primary btn-block">Buy Now</a>
-              </div>
-            </div>
-          </div>
+         
 
 
         </div>
@@ -141,6 +52,43 @@
 
       <iframe src="./footer.html" height="280" scrolling="no"  width="300" ></iframe>
     </div>
+    <script>
+      window.onload =  function  () {
+        var res;
+       var xhr = new XMLHttpRequest();
+       xhr.onreadystatechange = function() {
+       if (xhr.readyState == XMLHttpRequest.DONE) {
+           
+          res = JSON.parse(xhr.responseText)
+           res.responceObject.forEach(function (item, index) {
+           $("#images").append(
+           `<div class="col">
+     <div class="card mb-4" style="width: 300px">
+        <div class="card-header">
+           <img src="${item.imageURL}" class="card-img-top">
+        </div>
+        <div class="card-body text-center">
+           <h5>${item.materialName}</h5>
+           <span class="text-muted">Rs. ${item.price}</span><br>
+        </div>
+        <div class="card-footer text-center">
+         <a href="#" class="btn btn-primary btn-sm">Buy Now</a>
+          <a href="#" class="btn btn-warning btn-sm text-white"><i style="font-size:24px" class="fa">&#xf07a;</i> Add to Cart</a>
+   
+        </div>
+     </div>
+    </div>`
+             );
+             });
+           }
+         }
+         xhr.open('GET', `http://localhost:8080/api/getProductByCategory/5`, true);
+         xhr.send(null);
+           
+           
+         }
+     
+   </script>
 </body>
 
 </html>

@@ -36,16 +36,33 @@
 <div class="container my-4"><h3>Soft Toys</h3></div>
     
 <div class="container mb-4">
-  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
- <div class="col">
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3" id="images">
+ 
+</div>
+</div>
+<!------ Soft Toys code Ends ---------->
+
+
+<iframe src="./footer.html" height="280" scrolling="no"  width="300" ></iframe>
+</div>
+<script>
+   window.onload =  function  () {
+     var res;
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+    if (xhr.readyState == XMLHttpRequest.DONE) {
+        
+       res = JSON.parse(xhr.responseText)
+        res.responceObject.forEach(function (item, index) {
+        $("#images").append(
+        `<div class="col">
   <div class="card mb-4" style="width: 300px">
      <div class="card-header">
-        <img src="./assets/Toys/Teddy.jpg" class="card-img-top">
+        <img src="${item.imageURL}" class="card-img-top">
      </div>
      <div class="card-body text-center">
-        <h5>Teddy</h5>
-        <span class="text-muted">Rs. 299</span><br>
-<span class="text-success">10% Offer</span>
+        <h5>${item.materialName}</h5>
+        <span class="text-muted">Rs. ${item.price}</span><br>
      </div>
      <div class="card-footer text-center">
       <a href="#" class="btn btn-primary btn-sm">Buy Now</a>
@@ -53,149 +70,18 @@
 
      </div>
   </div>
- </div>
-
- <div class="col">
-  <div class="card mb-4" style="width: 300px">
-     <div class="card-header">
-        <img src="./assets/Toys/Minion.jpg" class="card-img-top">
-     </div>
-     <div class="card-body text-center">
-        <h5>Minion</h5>
-        <span class="text-muted">Rs.320</span><br>
-<span class="text-success">12% Offer</span>
-     </div>
-     <div class="card-footer text-center">
-      <a href="#" class="btn btn-primary btn-sm">Buy Now</a>
-      <a href="#" class="btn btn-warning btn-sm text-white"><i style="font-size:24px" class="fa">&#xf07a;</i> Add to Cart</a>
-
-     </div>
-  </div>
- </div>
-
- <div class="col">
-  <div class="card mb-4" style="width: 300px">
-     <div class="card-header">
-        <img src="./assets/Toys/Myotio.jpg" class="card-img-top">
-     </div>
-     <div class="card-body text-center">
-        <h5>Unicorn Toys</h5>
-        <span class="text-muted">Rs.250</span><br>
-<span class="text-success">17% Offer</span>
-     </div>
-     <div class="card-footer text-center">
-      <a href="#" class="btn btn-primary btn-sm">Buy Now</a>
-      <a href="#" class="btn btn-warning btn-sm text-white"><i style="font-size:24px" class="fa">&#xf07a;</i> Add to Cart</a>
-
-     </div>
-  </div>
- </div>
-
- <div class="col">
-  <div class="card mb-4" style="width: 300px">
-     <div class="card-header">
-        <img src="./assets/Toys/Cumez.jpg" class="card-img-top">
-     </div>
-     <div class="card-body text-center">
-        <h5>Elephant Toys</h5>
-        <span class="text-muted">Rs.499</span><br>
-<span class="text-success">10% Offer</span>
-     </div>
-     <div class="card-footer text-center">
-      <a href="#" class="btn btn-primary btn-sm">Buy Now</a>
-      <a href="#" class="btn btn-warning btn-sm text-white"><i style="font-size:24px" class="fa">&#xf07a;</i> Add to Cart</a>
-
-     </div>
-  </div>
- </div>
-
- <div class="col">
-  <div class="card mb-4" style="width: 300px">
-     <div class="card-header">
-        <img src="./assets/Toys/Hamleys.jpg" class="card-img-top">
-     </div>
-     <div class="card-body text-center">
-        <h5>Duck</h5>
-        <span class="text-muted">Rs.299</span><br>
-<span class="text-success">12% Offer</span>
-     </div>
-     <div class="card-footer text-center">
-      <a href="#" class="btn btn-primary btn-sm">Buy Now</a>
-      <a href="#" class="btn btn-warning btn-sm text-white"><i style="font-size:24px" class="fa">&#xf07a;</i> Add to Cart</a>
-
-     </div>
-  </div>
- </div>
-
-
-<div class="col">
-  <div class="card mb-4" style="width: 300px">
-     <div class="card-header">
-        <img src="./assets/Toys/Tickles.jpg" class="card-img-top">
-     </div>
-     <div class="card-body text-center">
-        <h5>Panda</h5>
-        <span class="text-muted">Rs.369</span><br>
-<span class="text-success">15% Offer</span>
-     </div>
-     <div class="card-footer text-center">
-      <a href="#" class="btn btn-primary btn-sm">Buy Now</a>
-      <a href="#" class="btn btn-warning btn-sm text-white"><i style="font-size:24px" class="fa">&#xf07a;</i> Add to Cart</a>
-
-     </div>
- </div>
-</div> 
-</div>
-</div>
-
-<!------ Soft Toys code Ends ---------->
-
-
-<footer class="footer">
-  <div class="container">
-  <div class="row">
-    <div class="footer-col">
-      <h4>Company</h4>
-      <ul>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Our Servies</a></li>
-        <li><a href="#">Privacy Policy</a></li>
-        <li><a href="#">Affiliate Program</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Get Help</h4>
-      <ul>
-        <li><a href="#">FAQ</a></li>
-        <li><a href="#">Shipping</a></li>
-        <li><a href="#">Returns</a></li>
-        <li><a href="#">Order Status</a></li>
-        <li><a href="#">Payment Options</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Online Shop</h4>
-      <ul>
-        <li><a href="#">Watch</a></li>
-        <li><a href="#">Bag</a></li>
-        <li><a href="#">Shoes</a></li>
-        <li><a href="#">Dress</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Follow Us</h4>
-      <div>
-        <a href="#"></a><i class="fa-brands fa-facebook-f"></i>
-        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-        <a href="#"><i class="fa-brands fa-twitter"></i></a>
-      </div>
-    </div>
-  </div>
-  </div>
-</footer>
-</div>
-
+ </div>`
+          );
+          });
+        }
+      }
+      xhr.open('GET', `http://localhost:8080/api/getProductByCategory/1`, true);
+      xhr.send(null);
+        
+        
+      }
+  
+</script>
 <script
   src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
