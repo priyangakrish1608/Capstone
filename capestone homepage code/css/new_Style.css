@@ -63,7 +63,6 @@ iframe
 
 
 .carousel .carousel-item {
-    margin-top: 1rem;
     height: 350px;
   }
 
@@ -72,7 +71,7 @@ iframe
     object-fit: cover;
     top: 0;
     left: 0;
-    min-height: 350px;
+    min-height: 370px;
   }
   
 
