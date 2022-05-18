@@ -26,39 +26,58 @@
     <link rel="stylesheet" href="./css/new_Style.css" />
    <style>
        img{
-           height: 50em;
+           height: 12em;
        }
    </style>
+   <style>
+    .jpg {
+      margin: 3%;
+      position: relative;
+      left: 10%;
+    }
+
+    .tl {
+      position: absolute;
+      right: 65%;
+    }
+
+    .btn:hover {
+      background-color: black;
+    }
+    .sl {
+      position: absolute;
+      right: 50%;
+    }
+    .para {
+      position: absolute;
+      right: 50%;
+    }
+  </style>
     
 </head>
 <body>
 <div class="container container-xl container-xxl container-lg">
-  <iframe src="./header.html" height="161" scrolling="no"  width="300" ></iframe>
+  <iframe src="./header.html" height="105" scrolling="no"  width="300" ></iframe>
 
 
 <!-------- Code Starts ---------------->
-<div>
-  <h3>My Cart</h3>
-</div>  
-<div class="container mb-5">
+
+<div class="container mb-5 mt-3" id="emptyCart">
+  <div>
+    <h3>My Cart</h3>
+  </div>  
     <div class="card">
         <div class="row">
             
-            <div class="col-md-8">
-             
-               <div class="card-body"> 
+            <div class="col-md-8" >
+             <div id="cartProducts">
+              
+             </div>
+             <div class="text-center mt-5 mb-4">
+              <a href="#" class="btn btn-warning btn-sm text-white">Place Order</a>
+             </div>
+
                 
-                  <img src="./assets/Electronics/Mobile/AppleiphoneSE.jpeg">
-                  
-                  <h4>APPLE iPhone SE (White, 64 GB) (Includes EarPods, Power Adapter)</h4>
-                  <p class="text-muted">Color: White</p>
-                  <p><b>Rs. 55,499</b></p>
-                  <p>Quantity <input type="number" id="quantity" name="quantity" min="1" max="10"></p>
-                </div>
-                <div class="card-footer text-center">
-                    <a href="#" class="btn btn-danger btn-sm">Remove</a>
-                    <a href="#" class="btn btn-warning btn-sm text-white">Place Order</a>
-                </div>
             </div>
         
             <div class="col-md-4">
@@ -67,7 +86,9 @@
                 </div>
                 
                <div class="card-body">
-                  <p>Price</p>
+                 <div class="d-flex">
+                  <p>Price: </p><span class="ms-2" id="pri"></span>
+                 </div>
                   <p>Discount</p>
                   <p>Delivery Charges</p>
                 </div>
@@ -90,7 +111,68 @@
 </div>    
 
 
-       
+    <script>
+      var price;
+      window.onload = async function () {
+        var res;
+        var cartMaterials = [];
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState == XMLHttpRequest.DONE) {
+  
+            res = JSON.parse(xhr.responseText)
+            cartMaterials = res.responceObject;
+            price = cartMaterials.reduce(function (acc, obj) { return acc + (obj.addProduct.price); }, 0);
+            document.getElementById("pri").innerHTML = ` ${price}`
+            console.log(price);
+            if (res.responceObject.length) {
+              res.responceObject.forEach(function (item, index) {
+              $("#cartProducts").append(
+                `<div class="card-body"> 
+                
+                <img  style="height: 135px; class="img-fluid" width: 200px;" src="${item.addProduct.imageURL}">
+                
+                <h4>${item.addProduct.materialName}</h4>
+                <p><b>Rs. ${item.addProduct.price}</b></p>
+                <div class="card-footer text-center">
+                    <a href="#" class="btn btn-danger btn-sm">Remove</a>
+                </div>
+              </div>`
+              );
+            });
+            } else {
+              $("#emptyCart").empty();
+              $("#emptyCart").append(
+                            `
+      <div class="text-center">
+        <img  src="./assets/cartimg.jpg" />
+      </div>
+      <br />
+      <div class="text-center"><h3>Missing Cart items?</h3></div>
+      <br />
+      <div class="text-center">
+        <p>Add something to cart</p>
+      </div>
+      <br />
+      <div class="text-center">
+        <button
+          class="btn btn-primary"
+          onclick="location.href = './new_Home.html';"
+        >
+          Shop now
+        </button>
+      </div>
+      <br /><br />`
+                        );
+            }
+            
+            
+          }
+        }
+        xhr.open('GET', `http://localhost:8080/api/getAddedtoCart/${JSON.parse(localStorage.getItem("loginUserDetails")).userID}`, true);
+        xhr.send(null);
+    }
+    </script>    
     
 
 <script
