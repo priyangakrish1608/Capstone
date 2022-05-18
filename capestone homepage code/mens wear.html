@@ -136,11 +136,6 @@
   
             res = JSON.parse(xhr.responseText)
             cartMaterials = res.responceObject;
-            cartMaterials = cartMaterials.map(e => {
-              return {
-                materialID : e.materialID
-              }
-            })
             setTimeout(() => {
               compareProduct();
             }, 2000);
@@ -169,6 +164,7 @@
                 if (e.isDis) {
                   document.getElementById(`button${i}`).innerHTML = "<i style='font-size:24px' class='fa'>&#xf07a;</i> Go To Cart";
                   document.getElementById(`button${i}`).href = "./cartproduct.html"
+                  document.getElementById(`button${i}`).removeAttribute("onclick")
                 }
               })
       }
