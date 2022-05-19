@@ -105,6 +105,10 @@
   
       }
       function addToCart(materialID) {
+        allMaterials.forEach((e,i) => {
+              document.getElementById(`button${i}`).style.pointerEvents = "none";
+              document.getElementById(`button${i}`).style.cursor = "default";
+          })
         let xhr = new XMLHttpRequest();
         xhr.open("POST", "http://localhost:8080/api/addToCart");
         xhr.setRequestHeader("Content-type", "application/json");
@@ -161,10 +165,13 @@
               })
               
               allMaterials.forEach((e,i) => {
+                document.getElementById(`button${i}`).style.pointerEvents = "";
+              document.getElementById(`button${i}`).style.cursor = "";
                 if (e.isDis) {
                   document.getElementById(`button${i}`).innerHTML = "<i style='font-size:24px' class='fa'>&#xf07a;</i> Go To Cart";
                   document.getElementById(`button${i}`).href = "./cartproduct.html"
                   document.getElementById(`button${i}`).removeAttribute("onclick")
+                  
                 }
               })
       }
