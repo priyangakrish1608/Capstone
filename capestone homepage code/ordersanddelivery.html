@@ -83,7 +83,6 @@
           res = JSON.parse(xhr.responseText)
           var data = res.responceObject;
           res.responceObject.forEach(function (item, index) {
-            if (index < 4) {
               $("#products").append(
                 `<tr class="text-dark">
              <td>${index + 1}</td>
@@ -94,7 +93,6 @@
              <td class="text-primary">Pending</td>
           </tr>`
               );
-            }
           });
         }
       }
