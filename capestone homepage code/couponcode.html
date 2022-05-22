@@ -82,17 +82,7 @@
                     <form action="" autocomplete="off" id="addCouponFormID" name="addCouponForm" class="mt-5 border p-4 bg-light shadow">
                         <h4 class="mb-5 text-secondary">Add Your Coupon</h4>
                         <div class="row">
-                            <div class="mb-3 col-md-6">
-                                <label>Product Type<span class="text-danger">*</span></label>
-                                <select class="form-select" name="productType" aria-label="Default select example">
-                                    <option selected disabled>Select Product Type</option>
-                                    <option value="1">Toys-Kids Products</option>
-                                    <option value="2">Fashion</option>
-                                    <option value="3">Beauty-Health</option>
-                                    <option value="4">Electronics</option>
-                                    <option value="5">Home-appliances</option>
-                                  </select>
-                            </div>
+                           
                             <div class="mb-3 col-md-6">
                                 <label>Coupon Name<span class="text-danger">*</span></label>
                                 <input type="text" name="cName" class="form-control"placeholder="Enter Coupon Name">
@@ -150,7 +140,7 @@
         function handleForm(event) {
           event.preventDefault();
         }
-        if (document.forms["addCouponForm"]["productType"].value == "" || document.forms["addCouponForm"]["cName"].value == "" || document.forms["addCouponForm"]["cCode"].value == "" || document.forms["addCouponForm"]["cAmount"].value == "") {
+        if ( document.forms["addCouponForm"]["cName"].value == "" || document.forms["addCouponForm"]["cCode"].value == "" || document.forms["addCouponForm"]["cAmount"].value == "") {
           alert("Please fill all fields");
           return
         }
@@ -161,7 +151,6 @@
         xhr.onreadystatechange = function () {
           if (xhr.readyState === 4) {
             if (xhr.status == 201) {
-              document.forms["addCouponForm"]["productType"].value = "";
               document.forms["addCouponForm"]["cName"].value = "";
               document.forms["addCouponForm"]["cCode"].value = "";
               document.forms["addCouponForm"]["cAmount"].value = "";
@@ -176,7 +165,6 @@
         };
 
         let data = JSON.stringify({
-        categoryID: document.forms["addCouponForm"]["productType"].value,
         couponName: document.forms["addCouponForm"]["cName"].value,
         couponCode: document.forms["addCouponForm"]["cCode"].value,
         discount: document.forms["addCouponForm"]["cAmount"].value,

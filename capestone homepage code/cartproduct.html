@@ -78,7 +78,12 @@
           </div>
 
           <div class="col-md-4">
-            <div class="card-header">
+              <div id="couponCodeID" style="display: flex;">
+                <input type="text"  class="form-control me-2" autocomplete="off" id="couponID" placeholder="COUPONCODE" >
+            <button class="btn btn-primary me-2" onclick="applyCoupon()">Apply Coupon</button>
+              </div>
+            <div id="couponCheck" style="display: none" class="text-success"></div>
+            <div class="card-header mt-2">
               <h5>Price Details</h5>
             </div>
 
@@ -86,12 +91,13 @@
               <div class="d-flex">
                 <p>Price: </p><span class="ms-2" id="pri"></span>
               </div>
-              <p>Discount</p>
-              <p>Delivery Charges</p>
+              <div class="d-flex">
+              <p>Discount: </p><span class="ms-2" id="dis"></span>
+            </div>
             </div>
 
             <div class="card-footer">
-              <h5>Total</h5>
+              <h5>Total: <span id="tot"></span></h5>
             </div>
           </div>
         </div>
@@ -135,8 +141,11 @@
   <script>
     var price;
     var cartMaterials = [];
+    var coupons;
+    var discount;
     window.onload = async function () {
       getAddedtoCart();
+      getCoupon()
     }
     const getAddedtoCart = () => {
       var res;
@@ -148,7 +157,7 @@
           cartMaterials = res.responceObject;
           price = cartMaterials.reduce(function (acc, obj) { return acc + (obj.addProduct.price); }, 0);
           document.getElementById("pri").innerHTML = ` ${price}`
-          console.log(price);
+          document.getElementById("tot").innerHTML = ` ${price}`
           if (res.responceObject.length) {
             res.responceObject.forEach(function (item, index) {
               $("#cartProducts").append(
@@ -252,6 +261,48 @@
         xhr.send(data);
       }
       };
+      const getCoupon = () => {
+                var res;
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState == XMLHttpRequest.DONE) {
+    
+                        res = JSON.parse(xhr.responseText)
+                        coupons = res.responceObject;
+                        res.responceObject.forEach(function (item, index) {
+                            
+                        });
+                    }
+                }
+                xhr.open('GET', `http://localhost:8080/api/getCoupon`, true);
+                xhr.send(null);
+            }
+            function applyCoupon() {
+              console.log(document.getElementById("couponID").value);
+              var cou = document.getElementById("couponID").value;
+              if (coupons.some(e => e.couponCode == document.getElementById("couponID").value)) {
+                document.getElementById("couponID").value = ""
+                document.getElementById("couponCheck").classList.add("text-success");
+                document.getElementById("couponCheck").classList.remove("text-danger");
+                document.getElementById("couponCheck").style.display = "block"
+                document.getElementById("couponCheck").innerHTML = `Coupon Added <i class="fa fa-check-circle" aria-hidden="true"></i>`;
+                coupons.forEach(e => {
+                  if (e.couponCode == cou) {
+                    discount =(price * e.discount)/100 > 150 ? 150 : (price * e.discount)/100;
+                    document.getElementById("dis").innerHTML = `${discount}`
+                    document.getElementById("tot").innerHTML = ` ${price - discount}`
+                  }
+                })
+              } else {
+                document.getElementById("couponCheck").classList.remove("text-success");
+                document.getElementById("couponCheck").classList.add("text-danger");
+                document.getElementById("couponCheck").style.display = "block"
+                document.getElementById("dis").innerHTML = "";
+                document.getElementById("couponCheck").innerHTML = `Coupon Invalid <i class="fa fa-times" aria-hidden="true"></i>`
+                document.getElementById("tot").innerHTML = price
+              }
+              
+            }
   </script>
 
 
