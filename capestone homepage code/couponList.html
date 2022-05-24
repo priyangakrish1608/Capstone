@@ -66,20 +66,7 @@
                 </div>
             </div>
         </nav>
-        <div class="row">
-            <div class="mb-3 col-md-6">
-                <label>Product Type<span class="text-danger">*</span></label>
-                <select class="form-select" name="productType" id="category" onchange="getCoupon()"
-                    aria-label="Default select example">
-                    <option selected disabled>Select Product Type</option>
-                    <option value="1">Toys-Kids Products</option>
-                    <option value="2">Fashion</option>
-                    <option value="3">Beauty-Health</option>
-                    <option value="4">Electronics</option>
-                    <option value="5">Home-appliances</option>
-                </select>
-            </div>
-        </div>
+        
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -114,9 +101,9 @@
             loginDetails = JSON.parse(localStorage.getItem("loginUserDetails"));
             nameElem = document.getElementById("userName");
             nameElem.innerHTML = `<a class='nav-link'>${loginDetails.name}</a>`;
+            getCoupon()
         }
         const getCoupon = () => {
-            console.log(document.getElementById("category").value);
             var res;
             var xhr = new XMLHttpRequest();
             xhr.onreadystatechange = function () {
@@ -137,7 +124,7 @@
                     });
                 }
             }
-            xhr.open('GET', `http://localhost:8080/api/getCouponByCategory/${document.getElementById("category").value}`, true);
+            xhr.open('GET', `http://localhost:8080/api/getCoupon`, true);
             xhr.send(null);
         }
         const removeCoupon = (couponID) => {
