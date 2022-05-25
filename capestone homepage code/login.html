@@ -239,9 +239,7 @@
         xhr.setRequestHeader("Content-type", "application/json");
         xhr.onreadystatechange = function () {
           if (xhr.readyState === 4) {
-            console.log(xhr.responseText); 
             response = JSON.parse(xhr.responseText);
-            console.log(response); 
             if (response.status == "OK") {
               loginUserDetails = JSON.parse(xhr.responseText)?.responceObject[0];
               localStorage.setItem("loginUserDetails", JSON.stringify(loginUserDetails));
@@ -253,7 +251,7 @@
                 loginDetails = JSON.parse(localStorage.getItem("loginUserDetails"));
               document.getElementById("toastMessage").classList.remove("show");
               if (loginDetails.roleID == 1) {
-                window.location.href = "./admin.html";
+                window.location.href = "./adminDashboard.html";
               } else {
                 window.location.href = "./new_Home.html";
               }
@@ -272,7 +270,6 @@
           email: document.forms["loginForm"]["email"].value,
           password: document.forms["loginForm"]["password"].value,
         });
-        console.log(data);
         xhr.send(data);
       };
     </script>
