@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <title>Elite Admin Dashboard </title>
+    <link rel="icon" href="./assets/title_logo.png" type="image/x-icon" />
     <link rel="stylesheet"
         href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
     <link rel="stylesheet" href="./css/adminDashboardStyle.css">
@@ -84,8 +85,11 @@
                 </label>
                 <div class="header-title">
                     <h1>Analytics</h1>
-                    <p>Display analytics about your channel <span class="las la-chart-
+                    <p>Display analytics about your website <span class="las la-chart-
                      line"></span></p>
+                </div>
+                <div id="adminName">
+                    
                 </div>
 
             </div>
@@ -179,6 +183,7 @@
         </main>
     </div>
     <script>
+        document.getElementById("adminName").innerHTML =`Hi ${JSON.parse(localStorage.getItem("loginUserDetails")).name}!`
         var totalUser;
         var custOrdersDate = [];
         var custOrderCount = {}
@@ -254,7 +259,7 @@
                 labels: custOrdersDate,
                 datasets: [
                     {
-                        label: "Orders",
+                        label: "No of Orders per day",
                         borderColor: "#2ec3a3",
                         borderWidth: "3",
                         backgroundColor: "rgba(235, 247, 253, 0.7)",

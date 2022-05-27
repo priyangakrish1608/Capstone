@@ -13,6 +13,12 @@
         href="https:stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="./css/navbar.css" />
     <link rel="stylesheet" href="./css/new_Style.css" />
+    <style>
+      img{
+          margin: 10px;
+          height: 75px;
+      }
+  </style>
 </head>
 <body>
     <div class="container container-xl container-xxl container-lg">
@@ -78,7 +84,7 @@
                     <th scope="col">S.No</th>
                     <th scope="col">Product Name</th>
                     <th scope="col">Price</th>
-                    <th scope="col">Image URL</th>
+                    <th scope="col">Image</th>
                     <th scope="col">Description</th>
                     <th scope="col">Delete</th>
                 </tr>
@@ -123,7 +129,7 @@
                       <th scope="row">${index + 1}</th>
                       <td>${item.materialName}</td>
                       <td>${item.price}</td>
-                      <td>${item.imageURL}</td>
+                      <td> <img src="${item.imageURL}"></td>
                       <td>${item.description == null ? "-" : item.description}</td>
                       <td onclick="removeProduct(${item.materialID})"><i class="fa-solid fa-trash"></i></td>
                     </tr>`

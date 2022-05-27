@@ -216,7 +216,12 @@ header {
     display: inline-block;
     margin-left: .5rem;
 }
-
+#adminName {
+    margin-left: 150px;
+    text-transform: capitalize;
+    font-size: 2em;
+    font-weight: 600;
+}
 .header-action button {
     padding: .85rem 2rem;
     font-size: 1rem;
