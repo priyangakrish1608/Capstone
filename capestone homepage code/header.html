@@ -175,7 +175,7 @@
           loginDetails = JSON.parse(localStorage.getItem("loginUserDetails"));
           elem.innerHTML = "<a class='nav-link' href='./login.html' target='_parent' onclick='localStorage.clear();'>Logout</a>"
           nameElem = document.getElementById("userName");
-          nameElem.innerHTML = `<a class='nav-link text-capitalize'>${loginDetails.name}</a>`;
+          nameElem.innerHTML = `<a class='nav-link text-capitalize fw-bold'>${loginDetails.name}</a>`;
           
         }
         
