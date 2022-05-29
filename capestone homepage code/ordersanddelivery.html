@@ -52,11 +52,11 @@
        <thead class="bg-info text-white">
           <tr>
             <th>S.No</th>
-            <th>Product_Image</th>
-            <th>Product_Name</th>
+            <th>Total Products Ordered</th>
             <th>Price (In Rs)</th>
             <th>Order_Status</th>
             <th>Delivery_Status</th>
+            <th>View Details</th>
           </tr>
        </thead>
        <tbody id="products">
@@ -86,17 +86,17 @@
               $("#products").append(
                 `<tr class="text-dark">
              <td>${index + 1}</td>
-             <td><img src="${item.addProduct.imageURL}"></td>
-             <td>${item.addProduct.materialName}</td>
-             <td>${item.addProduct.price}</td>
+             <td>${item.orderMaterials.length}</td>
+             <td>${item.price}</td>
              <td class="text-success">Ordered on ${item.orderDate}</td>
              <td class="text-primary">Pending</td>
+             <td class="text-primary"><a class="nav-link" href="./orderedProductDetails.html?orderID=${item.orderID}&userID=${item.userID}">View Details</a></td>
           </tr>`
               );
           });
         }
       }
-      xhr.open('GET', `http://localhost:8080/api/getUserOrderedDetails/${JSON.parse(localStorage.getItem("loginUserDetails")).userID}`, true);
+      xhr.open('GET', `http://localhost:8080/api/getUserOrdered/${JSON.parse(localStorage.getItem("loginUserDetails")).userID}`, true);
       xhr.send(null);
     }
     </script>

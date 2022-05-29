@@ -205,7 +205,7 @@
             xhr.onreadystatechange = function () {
                 if (xhr.readyState == XMLHttpRequest.DONE) {
                     var res = JSON.parse(xhr.responseText)
-                    var totalIncome = res.reduce(function (acc, obj) { return acc + obj.addProduct.price; }, 0);
+                    var totalIncome = res.reduce(function (acc, obj) { return acc + obj.price; }, 0);
                     custOrdersDate = res.map(e => {
                         var d = new Date(e.orderDate)
                         return d.toDateString()
@@ -215,6 +215,7 @@
                     custOrdersDate.forEach(e => {
                         custOrderCount[e] = 0
                     })
+                    console.log(custOrdersDate);
                     res.forEach(en => {
                         var d = new Date(en.orderDate)
                         custOrdersDate.forEach(e => {

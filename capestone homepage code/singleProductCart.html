@@ -182,11 +182,11 @@
         const placeOrder = async () => {
             if (confirm('Are You Sure')) {
                 let xhr = new XMLHttpRequest();
-                xhr.open("POST", "http://localhost:8080/api/placeOrder");
+                xhr.open("POST", "http://localhost:8080/api/place");
                 xhr.setRequestHeader("Content-type", "application/json");
                 xhr.onreadystatechange = function () {
                     if (xhr.readyState === 4) {
-                        if (xhr.status == 201) {
+                        if (xhr.status == 200) {
                             document.getElementById("toastMessage1").classList.add("show");
                             setTimeout(() => {
                                 document
@@ -200,10 +200,19 @@
                     return {
                         userID: JSON.parse(localStorage.getItem("loginUserDetails")).userID,
                         materialID: e.materialID,
-                        orderDate: (new Date()).toLocaleDateString("en-US")
                     }
                 })
-                let data = JSON.stringify(cartMaterials);
+                let payload = {};
+                payload = {
+                    "orderMaster": {
+                        "orderDate": (new Date()).toLocaleDateString("en-US"),
+                        "userID": JSON.parse(localStorage.getItem("loginUserDetails")).userID,
+                        "price": Number(document.getElementById("tot").innerHTML),
+                        "orderMaterials": cartMaterials
+                    }
+
+                }
+                let data = JSON.stringify(payload);
                 xhr.send(data);
             }
         };
