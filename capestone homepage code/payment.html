@@ -137,12 +137,18 @@ float: 'right';
         xhr.onreadystatechange = function () {
           if (xhr.readyState === 4) {
             if (xhr.status == 200) {
+              document.getElementById("name").value = ""
+              document.getElementById("accNumber").value = ""
+              document.getElementById("cvc").value = ""
+              document.getElementById("expiration").value = ""
               document.getElementById("toastMessage1").classList.add("show");
               setTimeout(() => {
                 document
                   .getElementById("toastMessage1")
                   .classList.remove("show");
                   window.location.href = "./ordersanddelivery.html"
+                  localStorage.removeItem("orderDetails")
+                  localStorage.removeItem("address")
               }, 2000);
             }
           }
