@@ -115,18 +115,7 @@
         <div class="toast-body">Cart Product Deleted Successfully</div>
       </div>
     </div>
-    <div class="toast position-fixed align-items-center text-white bg-primary border-0 me-3 mb-4 ms-auto" role="alert"
-      style="
-      position:fixed;
-      bottom: 0;
-      right: 0;
-      z-index: 9999;
-      float: 'right';
-    " id="toastMessage1" aria-live="assertive" aria-atomic="true">
-      <div class="d-flex">
-        <div class="toast-body">Order Placed Successfully</div>
-      </div>
-    </div>
+    
 
 
 
@@ -234,22 +223,22 @@
     }
     const placeOrder = async () => {
       if (confirm('Are You Sure')) {
-        let xhr = new XMLHttpRequest();
-        xhr.open("POST", "http://localhost:8080/api/place");
-        xhr.setRequestHeader("Content-type", "application/json");
-        xhr.onreadystatechange = function () {
-          if (xhr.readyState === 4) {
-            if (xhr.status == 200) {
-              document.getElementById("toastMessage1").classList.add("show");
-              getAddedtoCart()
-              setTimeout(() => {
-                document
-                  .getElementById("toastMessage1")
-                  .classList.remove("show");
-              }, 2000);
-            }
-          }
-        };
+        // let xhr = new XMLHttpRequest();
+        // xhr.open("POST", "http://localhost:8080/api/place");
+        // xhr.setRequestHeader("Content-type", "application/json");
+        // xhr.onreadystatechange = function () {
+        //   if (xhr.readyState === 4) {
+        //     if (xhr.status == 200) {
+        //       document.getElementById("toastMessage1").classList.add("show");
+        //       getAddedtoCart()
+        //       setTimeout(() => {
+        //         document
+        //           .getElementById("toastMessage1")
+        //           .classList.remove("show");
+        //       }, 2000);
+        //     }
+        //   }
+        // };
         cartMaterials = cartMaterials.map((e) => {
           return {
             materialID: e.materialID,
@@ -268,7 +257,10 @@
         }
         
         let data = JSON.stringify(payload);
-        xhr.send(data);
+        localStorage.setItem("orderDetails", data);
+        window.location.href = "./deliveryinput.html"
+
+        // xhr.send(data);
       }
     };
     const getCoupon = () => {

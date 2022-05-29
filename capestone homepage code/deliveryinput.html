@@ -29,7 +29,7 @@
 </head>
 <body>
 <div class="container container-xl container-xxl container-lg">
-  <iframe src="./header.html" height="161" scrolling="no"  width="300" ></iframe>
+  <iframe src="./header.html" height="101" scrolling="no"  width="300" ></iframe>
 
 
 <!-------- Code Starts ---------------->
@@ -38,42 +38,35 @@
         <div class="row">
             <div class="col-md-6 offset-md-3">
                <div class="address-form"> 
-                    <form class="mt-5 border p-4 bg-light shadow">
+                    <form id="formId" class="mt-5 border p-4 bg-light shadow">
                         <h4 class="mb-5 text-secondary">Delivery Address</h4>
                         <div class="row">
-                            <div class="mb-3 col-md-6">
-                                <label>House/Flat Number</label>
-                                <input type="text" placeholder="Enter Flat number">
-                            </div>
+                            
 
                             <div class="mb-3 col-md-6">
-                                <label>Address Line 1</label>
-                                <input type="text" placeholder="Enter Address Line 1">
+                                <label>House No / Street</label>
+                                <input id="address" type="text" placeholder="House No / Street">
                             </div>
                           
-                            <div class="mb-3 col-md-6">
-                                <label>Address Line 2</label>
-                                <input type="text" placeholder="Enter Address Line 2">
-                            </div>
+                            
                             
                             <div class="mb-3 col-md-6">
                                 <label>District</label><br>
-                                <input type="text" placeholder="Enter Area">
+                                <input id="district" type="text" placeholder="Enter Area">
                             </div>
                             
                            <div class="mb-3 col-md-6">
                                 <label>Pincode</label>
-                                <input type="number" placeholder="Enter Pincode">
+                                <input id="pincode" type="number" placeholder="Enter Pincode">
                             </div>
                           
                             <div class="mb-3 col-md-6">
                                 <label>State</label><br>
-                                <input type="text" placeholder="Enter State">
+                                <input id="state" type="text" placeholder="Enter State">
                             </div>
                           
                             <div>
-                                <a href="#" class="btn btn-success btn-lg">Deliver to this Address</a>
-                                <a href="#" class="btn btn-primary btn-lg">Change Address</a>
+                                <button onclick="addAddress()" class="btn btn-success btn-lg">Proceed</button>
                             </div>
                             
                         </div>
@@ -90,7 +83,31 @@
 
 <iframe src="./footer.html" height="280" scrolling="no"  width="300" ></iframe>
 </div>    
+<script>
+  function addAddress() {
+    let ourForm = document.getElementById("formId");
+        function handleForm(event) {
+          event.preventDefault();
+        }
+        ourForm.addEventListener("submit", handleForm);
+    var address = {}
+    if (document.getElementById("address").value == "" &&
+    document.getElementById("district").value == "" && 
+    document.getElementById("pincode").value == "" && 
+    document.getElementById("state").value == ""
+    ) {
+      alert("Please fill all fields")
+      return
+    }
+    address.adress = document.getElementById("address").value
+    address.district = document.getElementById("district").value
+    address.pincode = String(document.getElementById("pincode").value)
+    address.state = document.getElementById("state").value
 
+    localStorage.setItem("address",JSON.stringify(address));
+    window.location.href = "./payment.html"
+  }
+</script>
 
        
     

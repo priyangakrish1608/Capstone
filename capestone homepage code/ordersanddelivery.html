@@ -56,6 +56,7 @@
             <th>Price (In Rs)</th>
             <th>Order_Status</th>
             <th>Delivery_Status</th>
+            <th>Delivery_Address</th>
             <th>View Details</th>
           </tr>
        </thead>
@@ -89,7 +90,8 @@
              <td>${item.orderMaterials.length}</td>
              <td>${item.price}</td>
              <td class="text-success">Ordered on ${item.orderDate}</td>
-             <td class="text-primary">Pending</td>
+             <td class="text-danger">Pending</td>
+             <td class="text-secondary">${item.adress},${item.district},${item.pincode},${item.state}</td>
              <td class="text-primary"><a class="nav-link" href="./orderedProductDetails.html?orderID=${item.orderID}&userID=${item.userID}">View Details</a></td>
           </tr>`
               );
