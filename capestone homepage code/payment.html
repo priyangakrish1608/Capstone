@@ -73,6 +73,10 @@
                 <label for="expiration">Expiration </label><br>
                 <input type="month" name="expiration" id="expiration">
             </h6>
+            <h6>
+              <label for="amount">Amount </label><br>
+              <input type="text" disabled name="amount" id="amount">
+          </h6>
       
     </form>
     <h3 class="total">Total Amount</h3>
@@ -102,6 +106,7 @@ float: 'right';
 
        
 <script>
+  document.getElementById("amount").value = JSON.parse(localStorage.getItem("orderDetails")).orderMaster.price;
   function addPayment() {
     let ourForm = document.getElementById("formId");
         function handleForm(event) {
