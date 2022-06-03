@@ -199,6 +199,7 @@
                 }
                 let data = JSON.stringify(payload);
                 localStorage.setItem("orderDetails", data);
+                localStorage.setItem("isSingle", true);
                 window.location.href = "./deliveryinput.html"
             }
         };

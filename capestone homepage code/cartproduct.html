@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Mobile Cart</title>
+  <title>Cart</title>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -115,7 +115,7 @@
         <div class="toast-body">Cart Product Deleted Successfully</div>
       </div>
     </div>
-    
+
 
 
 
@@ -153,9 +153,10 @@
                 `<div class="card-body"> 
                 
                 <img  style="height: 135px; class="img-fluid" width: 200px;" src="${item.addProduct.imageURL}">
-                
+                <div>
                 <h4>${item.addProduct.materialName}</h4>
                 <p><b>Rs. ${item.addProduct.price}</b></p>
+                </div>
                 <div class="card-footer text-center">
                     <button onclick="removeProductFromCart(${item.cartID})" class="btn btn-danger btn-sm">Remove</button>
                 </div>
@@ -255,9 +256,10 @@
           }
 
         }
-        
+
         let data = JSON.stringify(payload);
         localStorage.setItem("orderDetails", data);
+        localStorage.setItem("isSingle", false);
         window.location.href = "./deliveryinput.html"
 
         // xhr.send(data);

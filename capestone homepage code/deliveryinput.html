@@ -91,9 +91,9 @@
         }
         ourForm.addEventListener("submit", handleForm);
     var address = {}
-    if (document.getElementById("address").value == "" &&
-    document.getElementById("district").value == "" && 
-    document.getElementById("pincode").value == "" && 
+    if (document.getElementById("address").value == "" ||
+    document.getElementById("district").value == "" || 
+    document.getElementById("pincode").value == "" || 
     document.getElementById("state").value == ""
     ) {
       alert("Please fill all fields")
